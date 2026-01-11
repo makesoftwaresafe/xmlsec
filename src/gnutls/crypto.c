@@ -93,6 +93,10 @@ xmlSecCryptoGetFunctions_gnutls(void) {
     gXmlSecGnuTLSFunctions->keyDataGostR3410_2012_512GetKlass = xmlSecGnuTLSKeyDataGost2012_512GetKlass;
 #endif /* XMLSEC_NO_GOST2012 */
 
+#ifndef XMLSEC_NO_MLDSA
+    gXmlSecGnuTLSFunctions->keyDataMLDSAGetKlass        = xmlSecGnuTLSKeyDataMLDSAGetKlass;
+#endif /* XMLSEC_NO_MLDSA */
+
 #ifndef XMLSEC_NO_HMAC
     gXmlSecGnuTLSFunctions->keyDataHmacGetKlass         = xmlSecGnuTLSKeyDataHmacGetKlass;
 #endif /* XMLSEC_NO_HMAC */
@@ -199,6 +203,13 @@ xmlSecCryptoGetFunctions_gnutls(void) {
     gXmlSecGnuTLSFunctions->transformGostR3410_2012GostR3411_2012_256GetKlass = xmlSecGnuTLSTransformGostR3410_2012GostR3411_2012_256GetKlass;
     gXmlSecGnuTLSFunctions->transformGostR3410_2012GostR3411_2012_512GetKlass = xmlSecGnuTLSTransformGostR3410_2012GostR3411_2012_512GetKlass;
 #endif /* XMLSEC_NO_GOST2012 */
+
+    /******************************* ML-DSA ********************************/
+#ifndef XMLSEC_NO_MLDSA
+    gXmlSecGnuTLSFunctions->transformMLDSA44GetKlass            = xmlSecGnuTLSTransformMLDSA44GetKlass;
+    gXmlSecGnuTLSFunctions->transformMLDSA65GetKlass            = xmlSecGnuTLSTransformMLDSA65GetKlass;
+    gXmlSecGnuTLSFunctions->transformMLDSA87GetKlass            = xmlSecGnuTLSTransformMLDSA87GetKlass;
+#endif /* XMLSEC_NO_MLDSA */
 
 
     /******************************* HMAC ********************************/
